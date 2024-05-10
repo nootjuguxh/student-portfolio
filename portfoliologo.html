@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Logo</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .portfolio-welcome {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 36px;
+        color: #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 60px;
+        padding: 20px 30px;
+        border: 2px solid #388e3c;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+        overflow: hidden;
+        animation: glowing 2s infinite;
+      }
+
+      @keyframes glowing {
+        0% {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="portfolio-welcome" id="welcomeText"></div>
+    <script>
+      const welcomeText = document.getElementById("welcomeText");
+      const text = "Welcome To My Portfolio";
+      let index = 0;
+
+      function revealText() {
+        if (index < text.length) {
+          welcomeText.textContent += text.charAt(index);
+          index++;
+          setTimeout(revealText, 200); // Adjust the delay as needed
+        }
+      }
+
+      revealText();
+    </script>
+  </body>
+</html>
